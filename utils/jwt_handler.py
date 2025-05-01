@@ -1,9 +1,12 @@
 from jose import jwt
 from datetime import datetime, timedelta
 import os
+from dotenv import load_dotenv
 
-SECRET_KEY = os.getenv("JWT_SECRET_KEY", "mythos360")
-ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
+load_dotenv()
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("JWT_ALGORITHM")
 
 def create_access_token(data: dict):
     to_encode = data.copy()

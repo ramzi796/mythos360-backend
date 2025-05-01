@@ -1,0 +1,3 @@
+firstname,email,password,role
+Alice,alice@example.com,Test123,employee
+Bob,bob@example.com,Password1,facilitator

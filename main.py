@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import auth
+from routers import admin, auth
 from database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -15,3 +15,4 @@ app.add_middleware(
 Base.metadata.create_all(bind=engine)
 
 app.include_router(auth.router, prefix="/auth", tags=["Auth"])
+app.include_router(admin.router, prefix="", tags=["Admin"])
